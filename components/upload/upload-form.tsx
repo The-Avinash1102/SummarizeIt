@@ -2,6 +2,7 @@
 import { useUploadThing } from "@/utils/uploadthing";
 import UploadFormInput from "./upload-form-input";
 import {z} from 'zod'
+import { generatePdfSummary } from "@/actions/upload-action";
 
 // Schema
 const schema = z.object({
@@ -50,6 +51,9 @@ export default function UploadForm() {
         }
 // parse the pdf using langchain
 
+        const summary = await generatePdfSummary(resp);
+
+        console.log({summary});
 
 // summarise the pdf using gemini
 // save the summary to the database

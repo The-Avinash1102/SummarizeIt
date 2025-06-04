@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.20.2",
+    "@langchain/community": "^0.3.45",
+    "@langchain/core": "^0.3.57",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-toast": "^1.2.14",
     "@uploadthing/react": "^7.3.1",
@@ -18,6 +20,8 @@
     "lucide-react": "^0.511.0",
     "next": "15.3.3",
     "next-themes": "^0.4.6",
+    "pdf-parse": "^1.1.1",
+    "pdf-parser": "^1.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
