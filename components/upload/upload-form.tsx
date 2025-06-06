@@ -2,7 +2,7 @@
 import { useUploadThing } from "@/utils/uploadthing";
 import UploadFormInput from "./upload-form-input";
 import { z } from "zod";
-import { generatePdfSummary } from "@/actions/upload-action";
+import { generatePdfSummary, storePdfSummaryAction } from "@/actions/upload-action";
 import { useRef, useState } from "react";
 
 // Schema
@@ -70,11 +70,24 @@ export default function UploadForm() {
       const { data = null, message = null } = result || {};
 
       if (data) {
+
+        let storeResult:any;
+
         console.log("Saving PDF...");
 
-        formRef.current?.reset();
         if (data.summary) {
+          storeResult = await storePdfSummaryAction({
+            summary:data.summary,
+            fileUrl:resp[0].serverData.file.url,
+            title:data.title,
+            fileName: file.name,
+          });
           // save the summary to the database
+          
+          alert('Your summary has been generated and saved');
+                  formRef.current?.reset();
+
+
         }
       }
       // summarise the pdf using gemini

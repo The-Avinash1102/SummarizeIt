@@ -33,3 +33,11 @@ npm install zod
 # we are using uploadthing tp upload our file and manage it
 ```bash
 npm install uploadthing @uploadthing/react
+
+# langchain for dataprocessing
+```bash
+npm install @langchain/core @langchain/community @latest
+
+# gemini genAI
+```bash
+npm install @google/generative-ai
